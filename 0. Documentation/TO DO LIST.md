@@ -49,7 +49,7 @@
 - [x] Initialize a new Node.js project
 - [x] Install necessary dependencies (Express, PostgreSQL/MariaDB client, JWT, etc.)
 - [x] Set up the project structure
-- [ ] Configure the database connection
+- [x] Configure the database connection
 
 ### User Authentication
 - [ ] Implement user registration endpoint (`/api/register`)
