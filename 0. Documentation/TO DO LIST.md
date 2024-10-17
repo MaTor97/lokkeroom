@@ -51,6 +51,9 @@
 - [x] Set up the project structure
 - [x] Configure the database connection
 
+### Database 
+
+
 ### User Authentication
 - [ ] Implement user registration endpoint (`/api/register`)
 - [ ] Implement user login endpoint (`/api/login`)
