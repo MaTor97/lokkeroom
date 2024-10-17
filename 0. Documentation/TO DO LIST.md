@@ -10,22 +10,6 @@
 -   Users can edit their own message
 -   
 
-### Structure 
-```plaintext
-.
-├── routes
-│   ├── authRoutes.js
-│   ├── lobbyRoutes.js
-│   ├── messageRoutes.js
-│   └── userRoutes.js
-├── middleware
-│   └── authMiddleware.js
-├── config
-│   └── dbConfig.js
-├── .env
-├── app.js
-└── package.json
-```
 
 
 ### List of endpoints
