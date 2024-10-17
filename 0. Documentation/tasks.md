@@ -1,6 +1,25 @@
 # Lokkeroom
 
-### features
+-   Repository: `lokkeroom`
+-   Type of Challenge: `Consolidation`
+-   Duration: `5 days`
+-   Deployment strategy : `Render | Railway | Vercel `
+-   Team challenge : `duo`
+
+> Real gossips are spread in the locker room!
+
+## Mission objectives
+
+You have been asked by several sports club to create a platform so that team member could share message with their team, and their team only! Your platform would allow coaches from a team to create a message lobby. Once their lobby is created coaches (admin) can add users to their team so they can access the lobby.
+
+All information has to be stored in a PostgreSQL or Mysql(MariaDB) database.
+
+All the below features have to be implemented in the form of a REST API, this API should only return JSON not HTML!
+
+Please it's time to use EcmaScript modules.
+Want an extra challenge ? Implement the MVC structure
+
+### 🌱 Must have features
 
 -   Users can sign up using an email and a password
 -   Users can log in using their email and password
@@ -8,27 +27,26 @@
 -   Users can view message from their lobby
 -   Users can post message on their lobby
 -   Users can edit their own message
--   
 
-### Structure 
-```plaintext
-.
-├── routes
-│   ├── authRoutes.js
-│   ├── lobbyRoutes.js
-│   ├── messageRoutes.js
-│   └── userRoutes.js
-├── middleware
-│   └── authMiddleware.js
-├── config
-│   └── dbConfig.js
-├── .env
-├── app.js
-└── package.json
-```
+### 🌼 Nice to have features (doable)
 
+-   Admin can delete message in their lobby
+-   Admin can edit message in their lobby
+-   Implement a pagination system
+
+### 🌳 Nice to haves (hard)
+
+-   Users can join multiple teams
+-   Implement a direct message system (user to user message)
+-   Try to implement Anti-bruteforce (ex: people cannot attempt more than 5 failed logins/hour)
+-   Admins can add people that have not yet registered to the platform.
+
+## Resources
 
 ### List of endpoints
+
+Here is an example of the endpoints you could implement.
+
 | Endpoint                           | Method | Bearer token? | Admin only | Request                                      | Response                                                                                                 |
 | ---------------------------------- | ------ | ------------- | ---------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | /api/register                      | POST   |               |            | An object containing a login, and a password | A message stating the user has been created (or the approriate error, if any)                            |
@@ -43,37 +61,6 @@
 | /api/lobby/[message-id]            | PATCH  | yes           | (yes)      | An object containing the message patches     | Edit a message. Users can only edit their own messages, unless they are admins.                          |
 | /api/messages/[message-id]         | DELETE | yes           | (yes)      | -                                            | Delete a message. Users can only edit their own messages, unless they are admins.                        |
 
-## To Do List
+Good luck!
 
-### Setup
-- [x] Initialize a new Node.js project
-- [x] Install necessary dependencies (Express, PostgreSQL/MariaDB client, JWT, etc.)
-- [x] Set up the project structure
-- [x] Configure the database connection
-
-
-
-### User Authentication
-- [ ] Implement user registration endpoint (`/api/register`)
-- [ ] Implement user login endpoint (`/api/login`)
-- [ ] Set up JWT authentication middleware
-
-### Lobby Management
-- [ ] Implement endpoint to create a message lobby (`/api/lobby`)
-- [ ] Implement endpoint to add a user to a lobby (`/api/lobby/[lobby-id]/add-user`)
-- [ ] Implement endpoint to remove a user from a lobby (`/api/lobby/[lobby-id]/remove-user`)
-
-### Message Management
-- [ ] Implement endpoint to get all messages from a lobby (`/api/lobby/[lobby-id]`)
-- [ ] Implement endpoint to get a single message from a lobby (`/api/lobby/[lobby-id]/[message-id]`)
-- [ ] Implement endpoint to post a message to a lobby (`/api/lobby/[lobby-id]`)
-- [ ] Implement endpoint to edit a message (`/api/lobby/[message-id]`)
-- [ ] Implement endpoint to delete a message (`/api/messages/[message-id]`)
-
-### User Management
-- [ ] Implement endpoint to get all users from the same lobby (`/api/users`)
-- [ ] Implement endpoint to get a single user (`/api/users/[user-id]`)
-
-### Deployment
-- [ ] Set up environment variables for production
-- [ ] Deploy the application to a cloud provider (e.g., Heroku, AWS)
+![Locker room](./locker-room.gif)
