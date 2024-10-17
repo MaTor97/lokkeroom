@@ -16,7 +16,7 @@ app.post('/api/register', async (req, res) => {
             RETURNING *;
         `;
         console.log('Done');
-        
+        res.end();
     } catch (error) {
         console.error(error);
         res.status(500).send("Internal Server Error");
