@@ -16,7 +16,7 @@ app.post('/api/register', async (req, res) => {
             VALUES (${username}, ${password}, ${email})
             RETURNING *;
         `;
-        console.log('Done');
+        res.send('A user has been created')
         
     } catch (error) {
         console.error(error);
