@@ -6,7 +6,7 @@ const app = express()
 
 app.use(bodyParser.json());
 
-app.delete('/message/:message_id', async  (req, res) => {
+app.delete('/api/message/:message_id', async  (req, res) => {
     const messageId = req.params.message_id;
     const loggedUserId = req.body.id;
     
