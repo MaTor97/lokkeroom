@@ -35,7 +35,7 @@ app.get("/api/users/:user_id", async (req, res) => {
 	const user_id = req.params.user_id;
 
 	try {
-        const result = await sql`SELECT user_id, username, email FROM users WHERE user_id = ${user_id}`;
+		const result = await sql`SELECT user_id, username, email FROM users WHERE user_id = ${user_id}`;
 
 		res.status(200).json(result);
 	} catch (error) {
