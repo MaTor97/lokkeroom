@@ -14,7 +14,7 @@ app.post("/api/register", async (req, res) => {
             VALUES (${username}, ${password}, ${email})
             RETURNING *;
         `;
-		console.log("Done");
+		res.status(200).send("User Registered");
 	} catch (error) {
 		console.error(error);
 		res.status(500).send("Internal Server Error");
