@@ -14,8 +14,7 @@ app.get('/api/lobby/:lobby_id', async (req, res) => {
             FROM messages
             WHERE lobby_id = ${lobby_id}
         `;
-        console.log('Done');
-        res.send(result).end();
+        res.send(result);
     } catch (error) {
         console.error(error);
         res.status(500).send("Internal Server Error");
@@ -32,8 +31,8 @@ app.get('/api/lobby/:lobby_id/:message_id', async (req, res) => {
             FROM messages
             WHERE lobby_id = ${lobby_id} AND message_id = ${message_id}
         `;
-        console.log('Done');
-        res.send(result).end();
+    
+        res.send(result);
     } catch (error) {
         console.error(error);
         res.status(500).send("Internal Server Error");
@@ -52,7 +51,7 @@ app.post('/api/lobby/:lobby_id', async (req, res) => {
             VALUES (${user_id}, ${lobby_id}, ${message}, ${date})
         `;
 
-        res.send('Message sent successfully').end();
+        res.send('Message sent successfully');
     } catch (error) {
         console.error(error);
         res.status(500).send("Internal Server Error");
@@ -76,7 +75,7 @@ app.post('/api/lobby/:lobby_id/add_user', async (req, res) => {
             WHERE lobby_id = ${lobby_id};
         `;
 
-        res.send('User added to lobby, and members count updated').end();
+        res.send('User added to lobby, and members count updated');
     } catch (error) {
         console.error(error);
         res.status(500).send("Internal Server Error");
@@ -96,8 +95,7 @@ app.post('/api/lobby/:lobby_id/del_user', async (req, res) => {
             UPDATE lobbies SET members = members - 1 WHERE lobby_id = ${lobby_id};
         `;
 
-        console.log('Done');
-        res.send('User removed and members count updated').end();
+        res.send('User removed and members count updated');
     } catch (error) {
         console.error(error);
         res.status(500).send("Internal Server Error");
@@ -131,9 +129,7 @@ app.patch('/api/lobby/:lobby_id/:message_id', async (req, res) => {
             SET message = ${message}
             WHERE message_id = ${message_id} AND lobby_id = ${lobby_id}
         `;
-
-        console.log('Message updated');
-        res.send('Message updated successfully').end();
+        res.send('Message updated successfully');
     } catch (error) {
         console.error(error);
         res.status(500).send("Internal Server Error");
