@@ -23,7 +23,7 @@ app.get("/api/users", async (req, res) => {
         WHERE ul.lobby_id = ${adminId}
         `;
 
-		console.log(result);
+		res.status(200).json(result);
 		res.end();
 	} catch (error) {
 		console.error(error);
