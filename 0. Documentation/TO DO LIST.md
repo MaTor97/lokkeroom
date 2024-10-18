@@ -55,7 +55,7 @@
 ### User Management
 - [x] Implement endpoint to get all users from the same lobby (`/api/users`)
   
-  <!-- TODO : Needs to add authentication  -->
+  <!-- TODO : Needs to add authentication with JWT token  -->
 - [ ] Implement endpoint to get a single user (`/api/users/[user-id]`)
 
 ### Deployment
