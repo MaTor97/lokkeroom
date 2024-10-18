@@ -14,12 +14,13 @@ app.post("/api/register", async (req, res) => {
             VALUES (${username}, ${password}, ${email})
             RETURNING *;
         `;
-		res.status(200).send("User Registered");
-	} catch (error) {
-		console.error(error);
-		res.status(500).send("Internal Server Error");
-	}
-});
+        console.log('Done');
+        res.end();
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+    }
+    });
 
 app.post("/api/login", async (req, res) => {
 	try {
