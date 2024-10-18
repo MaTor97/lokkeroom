@@ -35,29 +35,32 @@
 - [x] Set up the project structure
 - [x] Configure the database connection
 
-
-
 ### User Authentication
-- [ ] Implement user registration endpoint (`/api/register`)
-- [ ] Implement user login endpoint (`/api/login`)
+- [x] Implement user registration endpoint (`/api/register`)
+- [x] Implement user login endpoint (`/api/login`)
 - [ ] Set up JWT authentication middleware
 
 ### Lobby Management
-- [ ] Implement endpoint to create a message lobby (`/api/lobby`)
-- [ ] Implement endpoint to add a user to a lobby (`/api/lobby/[lobby-id]/add-user`)
-- [ ] Implement endpoint to remove a user from a lobby (`/api/lobby/[lobby-id]/remove-user`)
+- [x] Implement endpoint to create a message lobby (`/api/lobby`)
+- [x] Implement endpoint to add a user to a lobby (`/api/lobby/[lobby-id]/add-user`)
+- [x] Implement endpoint to remove a user from a lobby (`/api/lobby/[lobby-id]/remove-user`)
 
 ### Message Management
-- [ ] Implement endpoint to get all messages from a lobby (`/api/lobby/[lobby-id]`)
-- [ ] Implement endpoint to get a single message from a lobby (`/api/lobby/[lobby-id]/[message-id]`)
-- [ ] Implement endpoint to post a message to a lobby (`/api/lobby/[lobby-id]`)
-- [ ] Implement endpoint to edit a message (`/api/lobby/[message-id]`)
-- [ ] Implement endpoint to delete a message (`/api/messages/[message-id]`)
+- [x] Implement endpoint to get all messages from a lobby (`/api/lobby/[lobby-id]`)
+- [x] Implement endpoint to get a single message from a lobby (`/api/lobby/[lobby-id]/[message-id]`)
+- [x] Implement endpoint to post a message to a lobby (`/api/lobby/[lobby-id]`)
+- [x] Implement endpoint to edit a message (`/api/lobby/[message-id]`)
+- [x] Implement endpoint to delete a message (`/api/messages/[message-id]`)
 
 ### User Management
-- [ ] Implement endpoint to get all users from the same lobby (`/api/users`)
+- [x] Implement endpoint to get all users from the same lobby (`/api/users`)
+  
+  <!-- TODO : Needs to add authentication  -->
 - [ ] Implement endpoint to get a single user (`/api/users/[user-id]`)
 
 ### Deployment
 - [ ] Set up environment variables for production
 - [ ] Deploy the application to a cloud provider (e.g., Heroku, AWS)
+
+### Testing 
+-[] Testing the app
