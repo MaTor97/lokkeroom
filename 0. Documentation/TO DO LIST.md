@@ -8,7 +8,6 @@
 -   Users can view message from their lobby
 -   Users can post message on their lobby
 -   Users can edit their own message
--   
 
 
 
