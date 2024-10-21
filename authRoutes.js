@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import sql from "./dbConfig.js";
+import jwt from "jsonwebtoken";
 
 const app = express();
 
@@ -29,6 +30,7 @@ app.post("/api/login", async (req, res) => {
             FROM users
             WHERE username = ${username}
         `;
+        
         if (user.length === 0) {
             return res.status(404).send("User not found");
         }
@@ -36,8 +38,9 @@ app.post("/api/login", async (req, res) => {
         if (user[0].password !== password) {
             return res.status(401).send("Invalid password");
         }
-
-        res.status(200).send("Login successful");
+        
+        const token = jwt.sign({ username: user[0].username }, "secretkey");
+        res.status(200).json({ token });
 
 	} catch (error) {
 		console.error(error);
