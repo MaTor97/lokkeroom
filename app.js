@@ -4,14 +4,16 @@ import lobby from './lobbyRoutes.js'
 import message from './messageRoutes.js'
 import users from './userRoutes.js';
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+dotenv.config()
 
 const app = express();
 const PORT = 3000;
 
 async function checkToken(req, res, next) {
 	const token = req.headers['token'];
-	const secret = "secretkey"
-	
+	const secret = process.env.API_KEY;
+
 	try {
 	jwt.verify(token, secret)
 	next();

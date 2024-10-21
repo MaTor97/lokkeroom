@@ -2,8 +2,12 @@ import express from "express";
 import bodyParser from "body-parser";
 import sql from "./dbConfig.js";
 import jwt from "jsonwebtoken";
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
+
+const API_KEY = process.env.API_KEY
 
 app.use(bodyParser.json());
 
@@ -30,7 +34,7 @@ app.post("/api/login", async (req, res) => {
             FROM users
             WHERE username = ${username}
         `;
-        
+
         if (user.length === 0) {
             return res.status(404).send("User not found");
         }
@@ -39,7 +43,7 @@ app.post("/api/login", async (req, res) => {
             return res.status(401).send("Invalid password");
         }
         
-        const token = jwt.sign({ username: user[0].username }, "secretkey");
+        const token = jwt.sign({ username: user[0].username }, API_KEY);
         res.status(200).json({ token });
 
 	} catch (error) {
