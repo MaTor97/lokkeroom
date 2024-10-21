@@ -20,8 +20,9 @@ async function checkToken(req, res, next) {
 	}
 }
 
-// app.use(checkToken)
 app.use('/', auth);
+
+app.use(checkToken)
 app.use('/', lobby);
 app.use('/', message);
 app.use('/', users);
