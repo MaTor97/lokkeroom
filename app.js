@@ -15,7 +15,9 @@ async function checkToken(req, res, next) {
 	const secret = process.env.API_KEY;
 
 	try {
-	jwt.verify(token, secret)
+	jwt.verify(token, secret, (err, user)=> {
+		req.user = user.user_id
+	})
 	next();
 	} catch (error) {
 		res.status(401).send("User not Authorised")
@@ -24,7 +26,7 @@ async function checkToken(req, res, next) {
 
 app.use('/', auth);
 
-app.use(checkToken)
+app.use(checkToken);
 app.use('/', lobby);
 app.use('/', message);
 app.use('/', users);
