@@ -1,11 +1,13 @@
 import express from "express";
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+dotenv.config()
+
 import auth from './authRoutes.js';
 import lobby from './lobbyRoutes.js'
 import message from './messageRoutes.js'
 import users from './userRoutes.js';
-import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
-dotenv.config()
+
 
 const app = express();
 const PORT = 3000;
